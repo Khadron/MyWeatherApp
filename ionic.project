@@ -1,0 +1,10 @@
+{
+  "name": "MyWeatherApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api/geoloaction",
+      "proxyUrl": "http://api.map.baidu.com/geocoder/v2/"
+    }
+  ]
+}

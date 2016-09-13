@@ -1,0 +1,13 @@
+<ion-view view-title="添加城市">
+  <ion-content>
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="search" ng-model="model.cityName" placeholder="搜索城市">
+        </label>
+        <button class="button button-small button-positive" ng-click="search()">搜索</button>
+      </div>
+      <div class="item" ng-repeat="result in results" ui-sref="weather({city: result.cityName})">{{result.cityName}}</div>
+    </div>
+  </ion-content>
+</ion-view>

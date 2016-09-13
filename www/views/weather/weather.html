@@ -1,0 +1,39 @@
+<ion-view view-title="{{params.city}}">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" menu-toggle="left"><span class="icon ion-navicon"></span></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ng-click="showOptions()"><span class="icon ion-more"></span></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-scroll direction="y" paging="true" ng-style="{width: getWidth(), height: getHeight()}">
+      <div ng-style="{height: getTotalHeight()}">
+        <div class="scroll-page center" ng-style="{width: getWidth(), height: getHeight()}">
+          <div class="bar bar-dark">
+            <h1 class="title">当前天气</h1>
+          </div>
+          <div class="has-header">
+            <h2 class="primary">{{data.wendu | number:0}}&deg;</h2>
+            <h2 class="secondary icon" ng-class="data.forecast[0].type | icons"></h2>
+            <p>{{data.forecast[0].type}}</p>
+            <p>最高气温: {{data.forecast[0].high}}&nbsp;最低气温: {{data.forecast[0].low}}</p>
+            <p>风力: {{data.forecast[0].fengli}}&nbsp;风向：{{ data.forecast[0].fengxiang}}</p>
+          </div>
+        </div>
+        <div class="scroll-page" ng-style="{width: getWidth(), height: getHeight()}">
+          <div class="bar bar-dark">
+            <h1 class="title">天气预报</h1>
+          </div>
+          <div class="has-header">
+            <div class="row" ng-repeat="day in data.forecast | limitTo:settings.days">
+            <div class="col col-50">{{day.date}}</div>
+              <div class="col"><span class="icon" ng-class="day.type | icons"></span></div>
+              <div class="col">{{day.high}}</div>
+              <div class="col">{{day.low}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

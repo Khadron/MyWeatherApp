@@ -1,5 +1,5 @@
 # MyWeatherApp
-一款天气移动应用
+一款天气移动Hybrid应用，支持Ios和Android
 ##功能介绍
 * 根据用户所在位置自动定位所在城市
 
